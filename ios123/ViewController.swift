@@ -9,11 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var value1 = 0
-    var value2 = 0
-    var sum:Double = 0
-    var symbol = 0
+    var value1:Double = 0.0
+    var value2:Double = 0.0
+    var sum:Double = 0.0
+    var symbol:String = ""
+    var isvalue2: Bool = false
+    var PointFlag: Bool = false
     @IBOutlet weak var Result: UITextField!
+    @IBOutlet weak var value: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,53 +24,241 @@ class ViewController: UIViewController {
     }
     
     @IBAction func number1(_ sender: Any) {
-        Result.text = Result.text!+"1"
+        if value.text == "0" || (isvalue2 && value2 == 0.0)
+        {
+            value.text = ""
+        }
+        value.text = value.text! + "1"
+        if isvalue2
+        {
+            value2 = NSString(string: value.text!).doubleValue
+        }
+        else
+        {
+            value1 = NSString(string: value.text!).doubleValue
+        }
     }
     @IBAction func number2(_ sender: Any) {
-        Result.text = Result.text!+"2"
+        if value.text == "0" || (isvalue2 && value2 == 0.0)
+        {
+            value.text = ""
+        }
+        value.text = value.text! + "2"
+        if isvalue2
+        {
+            value2 = NSString(string: value.text!).doubleValue
+        }
+        else
+        {
+            value1 = NSString(string: value.text!).doubleValue
+        }
     }
     @IBAction func number3(_ sender: Any) {
-        Result.text = Result.text!+"3"
+        if value.text == "0" || (isvalue2 && value2 == 0.0)
+        {
+            value.text = ""
+        }
+        value.text = value.text! + "3"
+        if isvalue2
+        {
+            value2 = NSString(string: value.text!).doubleValue
+        }
+        else
+        {
+            value1 = NSString(string: value.text!).doubleValue
+        }
     }
     @IBAction func number4(_ sender: Any) {
-        Result.text = Result.text!+"4"
+        if value.text == "0" || (isvalue2 && value2 == 0.0)
+        {
+            value.text = ""
+        }
+        value.text = value.text! + "4"
+        if isvalue2
+        {
+            value2 = NSString(string: value.text!).doubleValue
+        }
+        else
+        {
+            value1 = NSString(string: value.text!).doubleValue
+        }
     }
     @IBAction func number5(_ sender: Any) {
-        Result.text = Result.text!+"5"
+        if value.text == "0" || (isvalue2 && value2 == 0.0)
+        {
+            value.text = ""
+        }
+        value.text = value.text! + "5"
+        if isvalue2
+        {
+            value2 = NSString(string: value.text!).doubleValue
+        }
+        else
+        {
+            value1 = NSString(string: value.text!).doubleValue
+        }
     }
     @IBAction func number6(_ sender: Any) {
-        Result.text = Result.text!+"6"
+        if value.text == "0" || (isvalue2 && value2 == 0.0)
+        {
+            value.text = ""
+        }
+        value.text = value.text! + "6"
+        if isvalue2
+        {
+            value2 = NSString(string: value.text!).doubleValue
+        }
+        else
+        {
+            value1 = NSString(string: value.text!).doubleValue
+        }
     }
     @IBAction func number7(_ sender: Any) {
-        Result.text = Result.text!+"7"
+        if value.text == "0" || (isvalue2 && value2 == 0.0)
+        {
+            value.text = ""
+        }
+        value.text = value.text! + "7"
+        if isvalue2
+        {
+            value2 = NSString(string: value.text!).doubleValue
+        }
+        else
+        {
+            value1 = NSString(string: value.text!).doubleValue
+        }
     }
     @IBAction func number8(_ sender: Any) {
-        Result.text = Result.text!+"8"
+        if value.text == "0" || (isvalue2 && value2 == 0.0)
+        {
+            value.text = ""
+        }
+        value.text = value.text! + "8"
+        if isvalue2
+        {
+            value2 = NSString(string: value.text!).doubleValue
+        }
+        else
+        {
+            value1 = NSString(string: value.text!).doubleValue
+        }
     }
     @IBAction func number9(_ sender: Any) {
-        Result.text = Result.text!+"9"
+        if value.text == "0" || (isvalue2 && value2 == 0.0)
+        {
+            value.text = ""
+        }
+        value.text = value.text! + "9"
+        if isvalue2
+        {
+            value2 = NSString(string: value.text!).doubleValue
+        }
+        else
+        {
+            value1 = NSString(string: value.text!).doubleValue
+        }
+    }
+    @IBAction func number0(_ sender: Any) {
+        if value.text == "0" || (isvalue2 && value2 == 0.0)
+        {
+            value.text = ""
+        }
+        value.text = value.text! + "0"
+        if isvalue2
+        {
+            value2 = NSString(string: value.text!).doubleValue
+        }
+        else
+        {
+            value1 = NSString(string: value.text!).doubleValue
+        }
+    }
+    @IBAction func point(_ sender: Any) {
+        if isvalue2
+        {
+            PointFlag = false
+        }
+        if !PointFlag
+        {
+            value.text = value.text!+"."
+            PointFlag = !PointFlag
+        }
     }
     @IBAction func add(_ sender: Any) {
-        symbol = -1
+        symbol = "+"
+        value.text = value.text!+"+"
+        isvalue2 = true
     }
     @IBAction func minus(_ sender: Any) {
-        symbol = -2
+        symbol = "-"
+        value.text = value.text!+"-"
+        isvalue2 = true
     }
     @IBAction func multiply(_ sender: Any) {
-        symbol = -3
+        symbol = "*"
+        value.text = value.text!+"×"
+        isvalue2 = true
     }
     @IBAction func divide(_ sender: Any) {
-        symbol = -4
+        symbol = "/"
+        value.text = value.text!+"÷"
+        isvalue2 = true
     }
-    @IBAction func sqrt(_ sender: Any) {
-        symbol = -5
+    @IBAction func evolution(_ sender: Any) {
+        symbol = "√"
+        value.text = value.text!+"√"
+        isvalue2 = true
     }
     @IBAction func square(_ sender: Any) {
-        symbol = -6
+        symbol = "^"
+        value.text = value.text!+"^"
+        isvalue2 = true
+    }
+    @IBAction func eliminate(_ sender: Any) {
+        value.text = "0"
+        Result.text = "0"
+        value1 = 0.0
+        value2 = 0.0
+        PointFlag = false
+        isvalue2 = false
+        symbol = ""
+    }
+    @IBAction func remove(_ sender: Any) {
+        
     }
     @IBAction func result(_ sender: Any) {
+        if isvalue2
+        {
+            if symbol == "/" && value2 == 0
+            {
+                print("Error: 除数不能为0")
+                return
+            }
+            switch symbol
+            {
+            case "+" :
+                sum = value1 + value2
+            case "-" :
+                sum = value1 - value2
+            case "*" :
+                sum = value1 * value2
+            case "/" :
+                sum = value1 / value2
+            case "^" :
+                sum = pow(value1,value2)
+            case "√" :
+                sum = sqrt(value1)
+            default :
+                sum = 0.0
+            }
+            Result.text = sum.description
+        }
+        print(sum)
+        print(value1)
+        print(value2)
+        print(symbol)
     }
-
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
