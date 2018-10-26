@@ -16,15 +16,12 @@ class ViewController: UIViewController {
     var isvalue2: Bool = false
     var PointFlag: Bool = false
     
-    var isadd:Bool = false
-    var isminus:Bool = false
-    var ismultiply:Bool = false
-    var isdivide:Bool = false
-    
     @IBOutlet weak var Result: UITextField!
     @IBOutlet weak var value: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        value.text = "0"
+        Result.text = "0"
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -196,6 +193,8 @@ class ViewController: UIViewController {
         sum = value1 + value2
         value1 = sum
         value2 = 0.0
+        value.text = value1.description
+        
     }
     @IBAction func minus(_ sender: Any) {
         symbol = "-"
@@ -204,6 +203,7 @@ class ViewController: UIViewController {
         sum = value1 - value2
         value1 = sum
         value2 = 0.0
+        value.text = value1.description
     }
     @IBAction func multiply(_ sender: Any) {
         symbol = "*"
@@ -212,6 +212,7 @@ class ViewController: UIViewController {
         sum = value1 * value2
         value1 = sum
         value2 = 0.0
+        value.text = value1.description
     }
     @IBAction func divide(_ sender: Any) {
         symbol = "/"
@@ -220,6 +221,7 @@ class ViewController: UIViewController {
         sum = value1 / value2
         value1 = sum
         value2 = 0.0
+        value.text = value1.description
     }
     @IBAction func evolution(_ sender: Any) {
         symbol = "√"
