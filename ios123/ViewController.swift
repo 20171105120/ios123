@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     var value1:Double = 0.0
     var value2:Double = 0.0
     var sum:Double = 0.0
+    var temp:Int = 0
     var symbol:String = ""
     var isvalue2: Bool = false
     var PointFlag: Bool = false
@@ -39,6 +40,7 @@ class ViewController: UIViewController {
         {
             value1 = NSString(string: value.text!).doubleValue
         }
+        temp = 1
     }
     @IBAction func number2(_ sender: Any) {
         if value.text == "0" || (isvalue2 && value2 == 0.0)
@@ -54,6 +56,7 @@ class ViewController: UIViewController {
         {
             value1 = NSString(string: value.text!).doubleValue
         }
+        temp = 1
     }
     @IBAction func number3(_ sender: Any) {
         if value.text == "0" || (isvalue2 && value2 == 0.0)
@@ -69,6 +72,7 @@ class ViewController: UIViewController {
         {
             value1 = NSString(string: value.text!).doubleValue
         }
+        temp = 1
     }
     @IBAction func number4(_ sender: Any) {
         if value.text == "0" || (isvalue2 && value2 == 0.0)
@@ -84,6 +88,7 @@ class ViewController: UIViewController {
         {
             value1 = NSString(string: value.text!).doubleValue
         }
+        temp = 1
     }
     @IBAction func number5(_ sender: Any) {
         if value.text == "0" || (isvalue2 && value2 == 0.0)
@@ -99,6 +104,7 @@ class ViewController: UIViewController {
         {
             value1 = NSString(string: value.text!).doubleValue
         }
+        temp = 1
     }
     @IBAction func number6(_ sender: Any) {
         if value.text == "0" || (isvalue2 && value2 == 0.0)
@@ -114,6 +120,7 @@ class ViewController: UIViewController {
         {
             value1 = NSString(string: value.text!).doubleValue
         }
+        temp = 1
     }
     @IBAction func number7(_ sender: Any) {
         if value.text == "0" || (isvalue2 && value2 == 0.0)
@@ -129,6 +136,7 @@ class ViewController: UIViewController {
         {
             value1 = NSString(string: value.text!).doubleValue
         }
+        temp = 1
     }
     @IBAction func number8(_ sender: Any) {
         if value.text == "0" || (isvalue2 && value2 == 0.0)
@@ -144,6 +152,7 @@ class ViewController: UIViewController {
         {
             value1 = NSString(string: value.text!).doubleValue
         }
+        temp = 1
     }
     @IBAction func number9(_ sender: Any) {
         if value.text == "0" || (isvalue2 && value2 == 0.0)
@@ -159,6 +168,7 @@ class ViewController: UIViewController {
         {
             value1 = NSString(string: value.text!).doubleValue
         }
+        temp = 1
     }
     @IBAction func number0(_ sender: Any) {
         if value.text == "0" || (isvalue2 && value2 == 0.0)
@@ -174,6 +184,7 @@ class ViewController: UIViewController {
         {
             value1 = NSString(string: value.text!).doubleValue
         }
+        temp = 1
     }
     @IBAction func point(_ sender: Any) {
         if isvalue2
@@ -191,18 +202,31 @@ class ViewController: UIViewController {
         value.text = value.text!+"+"
         isvalue2 = true
         sum = value1 + value2
-        value1 = sum
-        value2 = 0.0
+        if sum != 0
+        {
+            temp = 2
+        }
+        if temp == 2
+        {
+            value1 = sum
+            value2 = 0.0
+        }
         value.text = value1.description
-        
     }
     @IBAction func minus(_ sender: Any) {
         symbol = "-"
         value.text = value.text!+"-"
         isvalue2 = true
         sum = value1 - value2
-        value1 = sum
-        value2 = 0.0
+        if sum != 0
+        {
+            temp = 2
+        }
+        if temp == 2
+        {
+            value1 = sum
+            value2 = 0.0
+        }
         value.text = value1.description
     }
     @IBAction func multiply(_ sender: Any) {
@@ -210,8 +234,15 @@ class ViewController: UIViewController {
         value.text = value.text!+"×"
         isvalue2 = true
         sum = value1 * value2
-        value1 = sum
-        value2 = 0.0
+        if sum != 0
+        {
+            temp = 2
+        }
+        if temp == 2
+        {
+            value1 = sum
+            value2 = 0.0
+        }
         value.text = value1.description
     }
     @IBAction func divide(_ sender: Any) {
@@ -219,8 +250,15 @@ class ViewController: UIViewController {
         value.text = value.text!+"÷"
         isvalue2 = true
         sum = value1 / value2
-        value1 = sum
-        value2 = 0.0
+        if sum != 0
+        {
+            temp = 2
+        }
+        if temp == 2
+        {
+            value1 = sum
+            value2 = 0.0
+        }
         value.text = value1.description
     }
     @IBAction func evolution(_ sender: Any) {
@@ -241,6 +279,7 @@ class ViewController: UIViewController {
         PointFlag = false
         isvalue2 = false
         symbol = ""
+        temp = 0
     }
     @IBAction func remove(_ sender: Any) {
         
@@ -276,6 +315,7 @@ class ViewController: UIViewController {
         print(value2)
         print(sum)
         print(symbol)
+        print(isvalue2)
     }
         
     override func didReceiveMemoryWarning() {
