@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var temp:Int = 0
     var symbol:String = ""
     var isvalue2: Bool = false
+    var issecend: Bool = false
     var PointFlag: Bool = false
     
     @IBOutlet weak var Result: UITextField!
@@ -191,6 +192,10 @@ class ViewController: UIViewController {
         {
             PointFlag = false
         }
+        if value.text!.contains(".")
+        {
+            PointFlag = true
+        }
         if !PointFlag
         {
             value.text = value.text!+"."
@@ -249,6 +254,10 @@ class ViewController: UIViewController {
         symbol = "/"
         value.text = value.text!+"÷"
         isvalue2 = true
+        if value2 == 0
+        {
+            value2 = 1
+        }
         sum = value1 / value2
         if sum != 0
         {
